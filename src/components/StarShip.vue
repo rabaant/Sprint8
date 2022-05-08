@@ -94,17 +94,18 @@ export default {
     })
   },
   
-  
+  beforeMount(){
+    
+   
+  },
    mounted () {
     
     this.$store.dispatch('getShip',this.$route.params.id);
-
-  },
-  beforeUnmount(){
     this.$store.dispatch('getPilot');
     this.$store.dispatch('getFilm');
    
-  } 
+  },
+ 
   
 }
 </script>

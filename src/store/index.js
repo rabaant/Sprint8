@@ -15,7 +15,7 @@ export default createStore({
     isLogged:false,
     msgWrong:'',
     msgSucess:'',
-    defaultImg:require('../assets/placeholder.jpg'),
+    defaultImg:require('../assets/placeholder.png'),
   },
   getters: {
     starships( state ){

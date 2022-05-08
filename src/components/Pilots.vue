@@ -28,7 +28,8 @@
 export default {
   name: 'Pilots',
    props:['pilot'],
-   beforeUnmount () {
+   
+   unmounted () {
    
     this.$store.dispatch('clear');
 

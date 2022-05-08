@@ -2,21 +2,24 @@
   <div class="list">
     <h1 class="text-center">Starships</h1>
     <div></div>
-      <div class ="d-flex block flex-wrap col-12 justify-content-center vh-100" >
-        <div v-for = "(item,index) in starships" :key=index class="card col-3 m-2 block" style="width: 18rem; height:10rem">
-          
-          <ul class="list-group list-group-flush" >
-              <li  class="list-group-item">
+      <div class ="d-flex block flex-wrap col-12 justify-content-center vh-90" >
+        <div v-for = "(item,index) in starships" :key=index class="card col-3 m-2 block" style="width: 18rem; height:18rem">
+           <img class="center m-auto  w-75" :src="`https://starwars-visualguide.com/assets/img/starships/${item.id}.jpg`" alt="StarShip" :onerror="`this.onerror=null;this.src='${defaultImg}'`">
+            <ul class="list-group list-group-flush" >
+                <li  class="list-group-item">
 
-                <router-link :to="{name:'starShip', params: {id:item.id}}" class="h3 text-center">{{item.name}} 
-                </router-link>
-                <p>{{item.model}}</p>
-              </li>
-          </ul>
+                  <router-link :to="{name:'starShip', params: {id:item.id}}" class="h3 text-center">{{item.name}} 
+                  </router-link>
+                  <p>{{item.model}}</p>
+                </li>
+            </ul>
           
         </div>  
-          <button @click="$store.dispatch('getList')" style="height:4rem;">More Starships</button>
+          
       </div> 
+      <div class="row vh-10 d-flex justify-content-center">
+          <button @click="$store.dispatch('getList')" style="height:4rem;width:10rem;">More Starships</button>
+      </div>
       
       <div>
         
@@ -33,6 +36,7 @@ export default {
   computed:{
     ...mapGetters({
         starships:'starships',
+        defaultImg:'defaultImg'
        
     })
   },

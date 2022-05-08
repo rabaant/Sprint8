@@ -26,7 +26,7 @@
 export default {
   name: 'Films',
    props:['film'],
-   beforeUnmount () {
+   unmounted () {
    
     this.$store.dispatch('clear');
 
